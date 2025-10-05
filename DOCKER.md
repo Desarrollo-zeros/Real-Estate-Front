@@ -33,6 +33,8 @@ NEXT_PUBLIC_APP_NAME=Real Estate Management System
 - Para producción, cambia `localhost` por tu dominio real
 - Este archivo ya está incluido en el repositorio como ejemplo
 
+📖 **Ver [ENV_SETUP.md](ENV_SETUP.md) para una guía detallada sobre variables de entorno**
+
 ## 🚀 Inicio Rápido
 
 ### **1. Configurar Variables de Entorno**
@@ -53,13 +55,13 @@ echo "NEXT_PUBLIC_APP_NAME=Real Estate Management System" >> .env.production
 docker-compose up -d --build
 ```
 
-### **2. Ver logs**
+### **3. Ver logs**
 
 ```bash
 docker-compose logs -f frontend
 ```
 
-### **3. Detener servicio**
+### **4. Detener servicio**
 
 ```bash
 docker-compose down
