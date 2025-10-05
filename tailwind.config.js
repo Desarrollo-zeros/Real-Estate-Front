@@ -1,0 +1,96 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#003366',
+          50: '#E6EBF0',
+          100: '#CCD6E0',
+          200: '#99ADC2',
+          300: '#6684A3',
+          400: '#335B85',
+          500: '#003366',
+          600: '#002952',
+          700: '#001F3D',
+          800: '#001429',
+          900: '#000A14',
+        },
+        secondary: {
+          DEFAULT: '#0099CC',
+          50: '#E6F5FA',
+          100: '#CCEBF5',
+          200: '#99D7EB',
+          300: '#66C3E0',
+          400: '#33AFD6',
+          500: '#0099CC',
+          600: '#007AA3',
+          700: '#005C7A',
+          800: '#003D52',
+          900: '#001F29',
+        },
+        accent: {
+          DEFAULT: '#FFCC00',
+          50: '#FFFAEB',
+          100: '#FFF5D6',
+          200: '#FFEBAD',
+          300: '#FFE085',
+          400: '#FFD65C',
+          500: '#FFCC00',
+          600: '#CCA300',
+          700: '#997A00',
+          800: '#665200',
+          900: '#332900',
+        },
+        neutral: {
+          DEFAULT: '#F5F5F5',
+          50: '#FFFFFF',
+          100: '#FAFAFA',
+          200: '#F5F5F5',
+          300: '#E0E0E0',
+          400: '#BDBDBD',
+          500: '#9E9E9E',
+          600: '#757575',
+          700: '#616161',
+          800: '#424242',
+          900: '#212121',
+        },
+        text: {
+          DEFAULT: '#333333',
+          light: '#666666',
+          lighter: '#999999',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+      },
+      fontWeight: {
+        regular: '400',
+        medium: '500',
+        bold: '700',
+      },
+      boxShadow: {
+        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      },
+      borderRadius: {
+        'card': '0.5rem',
+      },
+    },
+  },
+  plugins: [],
+}
