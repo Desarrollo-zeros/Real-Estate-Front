@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 export function useAuth() {
   const router = useRouter();
-  const { user, token, isAuthenticated, setAuth, clearAuth } = useAuthStore();
+  const { user, token, isAuthenticated, setAuth, logout: storeLogout } = useAuthStore();
 
   const login = async (email: string, password: string) => {
     const response = await authService.login({ email, password });
@@ -23,9 +23,8 @@ export function useAuth() {
   };
 
   const logout = async () => {
-    await authService.logout();
-    clearAuth();
-    router.push('/login');
+    // Use the store logout which handles everything
+    await storeLogout();
   };
 
   const hasRole = (role: string): boolean => {

@@ -9,10 +9,10 @@ interface AuthState {
   isLoading: boolean;
   error: string | null;
   login: (credentials: LoginRequest) => Promise<void>;
-  logout: () => void;
+  logout: () => Promise<void>;
   setAuth: (auth: { user?: User; token: string; isAuthenticated: boolean ; expiresAt: string }) => void;
   updateUser: (user: Partial<User>) => void;
-  clearAuth: () => void;
+  clearAuth: () => Promise<void>;
   checkAuth: () => void;
   hasRole: (role: UserRole) => boolean;
   hasAnyRole: (roles: UserRole[]) => boolean;
@@ -63,16 +63,23 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   /**
    * Logout user
    */
-  logout: () => {
-    authService.logout();
+  logout: async () => {
+    // Clear auth state first to trigger UI updates
     set({
       user: null,
       token: null,
       isAuthenticated: false,
       error: null,
     });
+    
+    // Clear cookie
     document.cookie = 'realestate_auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
-    window.location.href = '/login';
+    
+    // Clear backend session and local storage
+    await authService.logout();
+    
+    // Force immediate redirect (replace prevents back button issues)
+    window.location.replace('/login');
   },
 
   /**
@@ -105,10 +112,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   /**
-   * Clear authentication state
+   * Clear authentication state (without redirect)
    */
-  clearAuth: () => {
-    authService.logout();
+  clearAuth: async () => {
     set({
       user: null,
       token: null,
@@ -116,6 +122,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       error: null,
     });
     document.cookie = 'realestate_auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+    await authService.logout();
   },
 
   /**

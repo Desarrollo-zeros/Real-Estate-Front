@@ -29,9 +29,9 @@ export const Sidebar = ({ children }: { children: ReactNode }) => {
     { name: 'Settings', href: ROUTES.SETTINGS, icon: Settings },
   ];
 
-  const handleLogout = () => {
-    logout();
-    router.push(ROUTES.LOGIN);
+  const handleLogout = async () => {
+    await logout();
+    // No need to router.push - logout already handles redirect
   };
 
   return (
@@ -139,7 +139,7 @@ export const Sidebar = ({ children }: { children: ReactNode }) => {
                   <p className="truncate text-xs text-gray-500">{user?.email || ''}</p>
                 </div>
               </div>
-              <Button variant="outline" className="w-full" onClick={logout}>
+              <Button variant="outline" className="w-full" onClick={handleLogout}>
                 <LogOut className="mr-2 h-4 w-4" />
                 Logout
               </Button>
