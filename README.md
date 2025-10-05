@@ -1,6 +1,49 @@
-# Real Estate Management System - Frontend
+<img width="1878" height="954" alt="image" src="https://github.com/user-attachments/assets/16679a7e-9b3a-43a3-ab73-48b06cd07791" /># Real Estate Management System - Frontend
 
 A modern, production-ready Next.js application for managing real estate properties, built with **Next.js 15**, **React 19**, **TypeScript**, and **Tailwind CSS 4**. This frontend seamlessly integrates with the .NET 9 Clean Architecture backend.
+#Login
+<img width="1879" height="964" alt="image" src="https://github.com/user-attachments/assets/4df30f90-417d-4495-af2e-e5fbb54165b9" />
+
+#Register
+<img width="1876" height="948" alt="image" src="https://github.com/user-attachments/assets/39704959-eca9-4ba4-a64f-20cecc844b3a" />
+
+# Dashboard
+<img width="1870" height="959" alt="image" src="https://github.com/user-attachments/assets/26fa3ce0-67af-449c-93a0-8924764240e4" />
+
+#Properties
+<img width="1883" height="955" alt="image" src="https://github.com/user-attachments/assets/153a921b-3e61-47e0-a16f-1df7df896005" />
+<img width="1882" height="1036" alt="image" src="https://github.com/user-attachments/assets/4e575936-4c64-464f-bbdf-9e6f02fb33d5" />
+<img width="1882" height="958" alt="image" src="https://github.com/user-attachments/assets/2be807b0-c90b-4b58-ad6e-e36d93828d6f" />
+<img width="1873" height="958" alt="image" src="https://github.com/user-attachments/assets/9bdc031b-2ce2-4d75-b9c6-d881bddaa03e" />
+<img width="1871" height="963" alt="image" src="https://github.com/user-attachments/assets/8bfa6a68-cfc7-4b63-85f8-3efdc2c7f8c4" />
+
+#Traces
+<img width="1618" height="613" alt="image" src="https://github.com/user-attachments/assets/0c6474dc-3db4-4132-a90b-6afedd41663c" />
+<img width="1628" height="901" alt="image" src="https://github.com/user-attachments/assets/21e8ff36-9f15-4d9c-bce5-d5dfdf99de36" />
+<img width="1871" height="995" alt="image" src="https://github.com/user-attachments/assets/4c31d5a3-acb2-43e5-bac9-a95298fce204" />
+<img width="1876" height="998" alt="image" src="https://github.com/user-attachments/assets/604d7cbe-d704-471e-a767-52c6de5db8e2" />
+<img width="1866" height="958" alt="image" src="https://github.com/user-attachments/assets/fb602454-2a88-48fa-bbc2-de0d42830e5e" />
+<img width="1862" height="956" alt="image" src="https://github.com/user-attachments/assets/7e1e4807-b23c-422f-8ec6-a1846164188b" />
+<img width="1878" height="1005" alt="image" src="https://github.com/user-attachments/assets/154953a9-430b-43a3-af65-bd1d4a2fc101" />
+
+#onwers
+<img width="1878" height="954" alt="image" src="https://github.com/user-attachments/assets/2e84a17f-f6d0-423a-91e0-6db2e0e993d3" />
+<img width="1863" height="951" alt="image" src="https://github.com/user-attachments/assets/7e36f326-18ac-46a8-ab0b-1ecb954bdb70" />
+<img width="1878" height="955" alt="image" src="https://github.com/user-attachments/assets/29121b32-b61a-4045-8ac4-4cd2f3e81dde" />
+<img width="1876" height="958" alt="image" src="https://github.com/user-attachments/assets/fd58602c-ee48-47a5-ad2d-12a90f2bca5a" />
+
+#Settings
+<img width="1870" height="961" alt="image" src="https://github.com/user-attachments/assets/b440f56a-8e8e-49a1-972b-753381c0fc1b" />
+<img width="1872" height="996" alt="image" src="https://github.com/user-attachments/assets/94a57324-2e7c-40a6-a2cf-20482f6178bb" />
+<img width="1874" height="961" alt="image" src="https://github.com/user-attachments/assets/6177e0a9-43b9-4fa7-a39f-9afcfc1a15e9" />
+<img width="1867" height="961" alt="image" src="https://github.com/user-attachments/assets/a61f6739-ace6-48c9-a690-7f583bdb487b" />
+<img width="1857" height="951" alt="image" src="https://github.com/user-attachments/assets/ca0558ae-d037-4516-9570-9a41060b3c01" />
+
+
+
+
+
+
 
 ## 🎯 Features
 
