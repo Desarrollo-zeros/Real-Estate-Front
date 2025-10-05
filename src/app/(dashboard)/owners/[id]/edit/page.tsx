@@ -8,6 +8,7 @@ import { ownerService } from '@/services/api';
 import { ROUTES } from '@/utils/constants';
 import { ArrowLeft, Save, Upload, X } from 'lucide-react';
 import type { UpdateOwnerDto, OwnerDto } from '@/types';
+import { getOwnerPhotoUrl } from '@/utils/imageUrl';
 
 /**
  * Edit Owner Page
@@ -195,7 +196,7 @@ export default function EditOwnerPage() {
                   <div className="relative inline-block">
                     <div className="w-32 h-32 rounded-lg overflow-hidden bg-neutral-100">
                       <img
-                        src={photoPreview}
+                        src={getOwnerPhotoUrl(photoPreview)}
                         alt="Owner photo preview"
                         className="w-full h-full object-cover"
                       />
