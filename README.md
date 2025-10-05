@@ -69,33 +69,56 @@ src/
 
 ### Prerequisites
 
-- **Node.js** 18+ and npm/yarn/pnpm
-- **.NET 9 Backend API** running (default: `https://localhost:5001`)
+- **Node.js** 18+ and npm/yarn/pnpm (for local development)
+- **Docker Desktop** (for Docker setup)
+- **.NET 9 Backend API** running (required)
 
-### Installation
+---
 
-1. **Clone the repository** (if not already done):
+### Option 1: Docker (Fastest) 🐳
+
+**⚠️ Important:** Start the backend first!
+
+```bash
+# 1. Start backend (from /back directory)
+cd back
+docker-compose up -d
+
+# 2. Start frontend (from /front directory)
+cd ../front
+docker-compose up -d --build
+```
+
+The app will be available at `http://localhost:3000`
+
+📖 **See [DOCKER.md](DOCKER.md) for detailed Docker documentation**
+
+---
+
+### Option 2: Local Development
+
+#### 1. **Clone the repository** (if not already done):
 ```bash
 cd front
 ```
 
-2. **Install dependencies**:
+#### 2. **Install dependencies**:
 ```bash
 npm install
 ```
 
-3. **Configure environment variables**:
+#### 3. **Configure environment variables**:
 ```bash
 cp .env.local.example .env.local
 ```
 
 Edit `.env.local` and update the API URL:
 ```env
-NEXT_PUBLIC_API_BASE_URL=https://localhost:5001/api/v1
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api/v1
 NEXT_PUBLIC_API_TIMEOUT=30000
 ```
 
-4. **Start the development server**:
+#### 4. **Start the development server**:
 ```bash
 npm run dev
 ```
