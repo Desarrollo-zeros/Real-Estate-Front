@@ -282,37 +282,56 @@ npm run start
 
 ## 🐳 Docker Support
 
-Create a `Dockerfile`:
+### Prerequisites for Docker Build
 
-```dockerfile
-FROM node:18-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+**⚠️ IMPORTANTE:** Antes de construir la imagen Docker, debes configurar el archivo `.env.production`:
 
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-RUN npm run build
+1. **Crear/Verificar `.env.production`** en la raíz del proyecto frontend:
 
-FROM node:18-alpine AS runner
-WORKDIR /app
-ENV NODE_ENV production
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
-
-EXPOSE 3000
-CMD ["npm", "start"]
+```bash
+# .env.production
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api/v1
+NEXT_PUBLIC_APP_NAME=Real Estate Management System
 ```
 
-Build and run:
+> **Nota:** Asegúrate de que `NEXT_PUBLIC_API_BASE_URL` apunte a la URL correcta de tu backend API.
+
+### Option 1: Using Docker Compose (Recommended)
+
 ```bash
+# Make sure backend is running first
+cd ../back
+docker-compose up -d
+
+# Then start frontend
+cd ../front
+docker-compose up -d --build
+```
+
+📖 **See [DOCKER.md](DOCKER.md) for detailed instructions**
+
+### Option 2: Manual Docker Build
+
+If you prefer to build manually:
+
+```bash
+# Build the image
 docker build -t realestate-frontend .
-docker run -p 3000:3000 realestate-frontend
+
+# Run the container
+docker run -p 3000:3000 \
+  -e NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api/v1 \
+  realestate-frontend
+```
+
+### Docker Build Args
+
+You can also pass the API URL during build:
+
+```bash
+docker build \
+  --build-arg NEXT_PUBLIC_API_BASE_URL=http://your-api-url/api/v1 \
+  -t realestate-frontend .
 ```
 
 ## 🔧 Configuration

@@ -6,7 +6,9 @@ Este `docker-compose.yml` incluye:
 
 - **Frontend (Next.js)**: Aplicación web (puerto 3000)
 
-## ⚠️ Requisito Previo
+## ⚠️ Requisitos Previos
+
+### 1. Backend API
 
 **El backend debe estar corriendo** para que el frontend funcione correctamente.
 
@@ -14,9 +16,37 @@ Puedes:
 1. Ejecutar el backend con Docker desde `/back`
 2. O ejecutar el backend localmente con `dotnet run`
 
+### 2. Archivo de Variables de Entorno
+
+**🔴 IMPORTANTE:** Debes tener el archivo `.env.production` configurado antes de hacer el build.
+
+Crea o verifica el archivo `.env.production` en la raíz del proyecto frontend:
+
+```bash
+# .env.production
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api/v1
+NEXT_PUBLIC_APP_NAME=Real Estate Management System
+```
+
+**Notas:**
+- Asegúrate de que `NEXT_PUBLIC_API_BASE_URL` apunte a la URL correcta de tu backend
+- Para producción, cambia `localhost` por tu dominio real
+- Este archivo ya está incluido en el repositorio como ejemplo
+
 ## 🚀 Inicio Rápido
 
-### **1. Levantar el servicio**
+### **1. Configurar Variables de Entorno**
+
+```bash
+# Verificar que .env.production existe
+cat .env.production
+
+# Si no existe, créalo
+echo "NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api/v1" > .env.production
+echo "NEXT_PUBLIC_APP_NAME=Real Estate Management System" >> .env.production
+```
+
+### **2. Levantar el servicio**
 
 ```bash
 # Desde la carpeta /front
